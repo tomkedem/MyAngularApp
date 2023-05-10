@@ -1,0 +1,8 @@
+<mat-form-field *ngIf="countryId">
+  <mat-label>Select a City</mat-label>
+  <mat-select [(ngModel)]="selectedCityId" (selectionChange)="onCityChange()">
+    <mat-option *ngFor="let city of cities" [value]="city.id">
+      {{ city.name }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

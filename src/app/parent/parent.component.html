@@ -1,0 +1,15 @@
+<div>
+  <app-country-select (countrySelected)="onCountrySelected($event)"></app-country-select>
+  <app-city-select [countryId]="selectedCountry?.id" (citySelected)="onCitySelected($event)"></app-city-select>
+</div>
+
+<div class="computer-screen-container">
+  <div class="computer-screen">
+    <img src="assets/computer-screen.png" alt="Computer Screen" />
+  </div>
+  <div *ngIf="selectedCountry || selectedCity" class="selected-info">
+    <h3>Selected Country and City</h3>
+    <p *ngIf="selectedCountry">Country Name: {{ selectedCountry.name }}</p>
+    <p *ngIf="selectedCity">City Name: {{ selectedCity.name }}</p>
+  </div>
+</div>
